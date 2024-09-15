@@ -1,46 +1,46 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import netlifyLogo from 'public/netlify-logo.svg';
+import sharmysLogo from 'public/sharmys-logo.png';
 import githubLogo from 'public/images/github-mark-white.svg';
+import { Button } from '@/components/ui/button';
 
-const navItems = [
-    { linkText: 'Home', href: '/' },
-    { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
-    { linkText: 'Edge Function', href: '/edge' },
-    { linkText: 'Blobs', href: '/blobs' },
-    { linkText: 'Classics', href: '/classics' }
-];
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuIndicator,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+    NavigationMenuViewport
+} from '@/components/ui/navigation-menu';
+import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
+
+const navItem = { linkText: 'Cart', href: '/cart' };
 
 export function Header() {
     return (
-        <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
-            <Link href="/">
-                <Image src={netlifyLogo} alt="Netlify logo" />
-            </Link>
-            {!!navItems?.length && (
-                <ul className="flex flex-wrap gap-x-4 gap-y-1">
-                    {navItems.map((item, index) => (
-                        <li key={index}>
-                            <Link
-                                href={item.href}
-                                className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2"
-                            >
-                                {item.linkText}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            )}
-            <div className="flex-grow justify-end hidden lg:flex lg:mr-1">
-                <Link
-                    href="https://github.com/netlify-templates/next-platform-starter"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image src={githubLogo} alt="GitHub logo" className="w-7" />
-                </Link>
-            </div>
-        </nav>
+        <NavigationMenu className="border-b-2 bg-yellow-300 flex w-full max-w-full px-6 sm:px-12">
+            <NavigationMenuList>
+                <NavigationMenuItem className="flex flex-col justify-start">
+                    <Link href="/">
+                        <Image className="w-24" src={sharmysLogo} alt="Sharmy's logo" />
+                    </Link>
+                    <span className="mx-auto">Sharmy&apos;s</span>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <div>Location data</div>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <Link href={navItem.href} legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            {navItem.linkText}
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
+            </NavigationMenuList>
+        </NavigationMenu>
     );
 }

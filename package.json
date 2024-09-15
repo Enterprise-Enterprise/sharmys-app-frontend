@@ -10,6 +10,10 @@
     },
     "dependencies": {
         "@netlify/blobs": "^8.0.1",
+        "@radix-ui/react-navigation-menu": "^1.2.0",
+        "@radix-ui/react-popover": "^1.1.1",
+        "@radix-ui/react-separator": "^1.1.0",
+        "@radix-ui/react-slot": "^1.1.0",
         "blobshape": "^1.0.0",
         "bright": "^0.8.5",
         "class-variance-authority": "^0.7.0",
