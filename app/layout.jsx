@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
             </head>
             <body className="antialiased bg-white">
                 <div className="flex flex-col min-h-screen bg-grid-pattern ">
-                    <div className="flex flex-col w-full grow">
+                    <div className="flex flex-col w-full">
                         <Header />
                         <div className="grow">{children}</div>
                         <Footer />
