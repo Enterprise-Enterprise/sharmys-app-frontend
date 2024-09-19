@@ -41,14 +41,18 @@ export default function Cart() {
                         <ShoppingCart />
                     </NavigationMenuLink>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px]">
+                <DialogContent
+                    className="sm:max-w-[425px] right-0 translate-x-0 left-auto h-screen animate-from-left
+                 data-[state=open]:slide-in-from-right-full data-[state=open]:slide-in-from-top-1/2 data-[state=open]:!zoom-in-100
+                 data-[state=closed]:slide-out-to-right-full data-[state=closed]:slide-out-to-top-1/2 data-[state=closed]:!zoom-out-100
+                 "
+                >
                     <DialogHeader>
-                        <DialogTitle>Edit profile</DialogTitle>
+                        <DialogTitle>Order Summary</DialogTitle>
                         <DialogDescription>
                             Make changes to your profile here. Click save when you&apos;re done.
                         </DialogDescription>
                     </DialogHeader>
-                    <ProfileForm />
                 </DialogContent>
             </Dialog>
         );
