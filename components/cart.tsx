@@ -32,7 +32,6 @@ import { Input } from './ui/input';
 export default function Cart() {
     const [open, setOpen] = React.useState(false);
     const isDesktop = useMediaQuery('(min-width: 768px)');
-
     if (isDesktop) {
         return (
             <Dialog open={open} onOpenChange={setOpen}>
@@ -50,25 +49,23 @@ export default function Cart() {
                     <DialogHeader>
                         <DialogTitle>Order Summary</DialogTitle>
                         <DialogDescription>
-                            Make changes to your profile here. Click save when you&apos;re done.
+                            <OrderSummary className="px-4" />
                         </DialogDescription>
                     </DialogHeader>
                 </DialogContent>
             </Dialog>
         );
     }
-
     return (
         <Drawer open={open} onOpenChange={setOpen}>
             <DrawerTrigger asChild></DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader className="text-left">
-                    <DrawerTitle>Edit profile</DrawerTitle>
+                    <DrawerTitle>Order Summary</DrawerTitle>
                     <DrawerDescription>
-                        Make changes to your profile here. Click save when you&apos;re done.
+                        <OrderSummary className="px-4" />
                     </DrawerDescription>
                 </DrawerHeader>
-                <ProfileForm className="px-4" />
                 <DrawerFooter className="pt-2">
                     <DrawerClose asChild>
                         <Button variant="outline">Cancel</Button>
@@ -79,31 +76,10 @@ export default function Cart() {
     );
 }
 
-function ProfileForm({ className }: React.ComponentProps<'form'>) {
+function OrderSummary({ className }) {
     return (
-        <form className={cn('grid items-start gap-4', className)}>
-            <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input type="email" id="email" defaultValue="shadcn@example.com" />
-            </div>
-            <div className="grid gap-2">
-                <Label htmlFor="username">Username</Label>
-                <Input id="username" defaultValue="@shadcn" />
-            </div>
-            <Button type="submit">Save changes</Button>
-        </form>
+        <>
+            <div className={className}>order stuff</div>
+        </>
     );
 }
-
-// export default function Cart() {
-//     return (
-//         <>
-//             <div className="flex rounded-lg px-4 py-2">
-//                 <Dialog>
-//                     <DialogTrigger asChild>
-//                     </DialogTrigger>
-//                 </Dialog>
-//             </div>
-//         </>
-//     );
-// }
