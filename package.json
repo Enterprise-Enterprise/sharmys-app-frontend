@@ -16,7 +16,6 @@
         "@radix-ui/react-popover": "^1.1.1",
         "@radix-ui/react-separator": "^1.1.0",
         "@radix-ui/react-slot": "^1.1.0",
-        "@uidotdev/usehooks": "^2.4.1",
         "blobshape": "^1.0.0",
         "bright": "^0.8.5",
         "class-variance-authority": "^0.7.0",
@@ -29,6 +28,7 @@
         "tailwind-merge": "^2.5.2",
         "tailwindcss-animate": "^1.0.7",
         "unique-names-generator": "^4.7.1",
+        "usehooks-ts": "^3.1.0",
         "vaul": "^0.9.3"
     },
     "devDependencies": {
