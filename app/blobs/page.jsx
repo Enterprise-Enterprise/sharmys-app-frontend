@@ -1,10 +1,10 @@
-import { Markdown } from 'components/markdown';
-import { ShapeEditor } from './editor';
-import { ContextAlert } from 'components/context-alert';
-import { getNetlifyContext, uploadDisabled } from 'utils';
+import { Markdown } from "components/markdown";
+import { ShapeEditor } from "./editor";
+import { ContextAlert } from "components/context-alert";
+import { getNetlifyContext, uploadDisabled } from "utils";
 
 export const metadata = {
-    title: 'Blobs'
+  title: "Blobs",
 };
 
 const explainer = `
@@ -38,22 +38,22 @@ User uploads are disabled in this site. To run your own and try it out:
 `;
 
 export default async function Page() {
-    return (
-        <>
-            <section className="flex flex-col gap-6 sm:gap-8">
-                <ContextAlert
-                    addedChecksFunction={(ctx) => {
-                        return uploadDisabled ? uploadDisabledText : null;
-                    }}
-                />
-                <h1>Blobs x Blobs</h1>
-            </section>
-            {!!getNetlifyContext() && (
-                <div className="flex flex-col gap-8">
-                    <Markdown content={explainer} />
-                    <ShapeEditor />
-                </div>
-            )}
-        </>
-    );
+  return (
+    <>
+      <section className="flex flex-col gap-6 sm:gap-8">
+        <ContextAlert
+          addedChecksFunction={(ctx) => {
+            return uploadDisabled ? uploadDisabledText : null;
+          }}
+        />
+        <h1>Blobs x Blobs</h1>
+      </section>
+      {!!getNetlifyContext() && (
+        <div className="flex flex-col gap-8">
+          <Markdown content={explainer} />
+          <ShapeEditor />
+        </div>
+      )}
+    </>
+  );
 }
