@@ -5,7 +5,7 @@ import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
 import { ShoppingCart } from 'lucide-react';
 import { NavigationMenuItem, NavigationMenuLink } from '@/components/ui/navigation-menu';
 import * as React from 'react';
-
+import { useMediaQuery } from 'usehooks-ts';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -26,7 +26,6 @@ import {
     DrawerTitle,
     DrawerTrigger
 } from '@/components/ui/drawer';
-import { useMediaQuery } from '@uidotdev/usehooks';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
 export default function Cart() {
