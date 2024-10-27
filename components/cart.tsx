@@ -28,6 +28,7 @@ import {
 } from '@/components/ui/drawer';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
+import OrderSummary from './order-summary';
 export default function Cart() {
     const [open, setOpen] = React.useState(false);
     const isDesktop = useMediaQuery('(min-width: 768px)');
@@ -45,7 +46,7 @@ export default function Cart() {
                  data-[state=closed]:slide-out-to-right-full data-[state=closed]:slide-out-to-top-1/2 data-[state=closed]:!zoom-out-100
                  "
                 >
-                    <DialogHeader>
+                    <DialogHeader className="gap-4">
                         <DialogTitle>Order Summary</DialogTitle>
                         <DialogDescription>
                             <OrderSummary className="px-4" />
@@ -59,8 +60,8 @@ export default function Cart() {
         <Drawer open={open} onOpenChange={setOpen}>
             <DrawerTrigger asChild></DrawerTrigger>
             <DrawerContent>
-                <DrawerHeader className="text-left">
-                    <DrawerTitle>Order Summary</DrawerTitle>
+                <DrawerHeader className="text-center gap-4">
+                    <DrawerTitle className="text-center">Order Summary</DrawerTitle>
                     <DrawerDescription>
                         <OrderSummary className="px-4" />
                     </DrawerDescription>
@@ -72,13 +73,5 @@ export default function Cart() {
                 </DrawerFooter>
             </DrawerContent>
         </Drawer>
-    );
-}
-
-function OrderSummary({ className }) {
-    return (
-        <>
-            <div className={className}>order stuff</div>
-        </>
     );
 }
